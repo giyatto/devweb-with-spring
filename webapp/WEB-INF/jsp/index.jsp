@@ -9,9 +9,8 @@
 
 </head>
 <body>
-
-   <%@ include file="./commons/_top.jspf" %>   
-
+     <%@ include file="./commons/_top.jspf" %>   
+    
 	<header class="jumbotron subhead" id="overview">
 	<div class="container">
 		<h1>giyatto</h1>
@@ -22,7 +21,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12">
-		       	수정된 메인 페이지 
+		       	<h4>spring을 이용한 Web Service 개발 연습</h4>
 			</div>
 		</div>
 	</div>

@@ -8,8 +8,7 @@
 
 </head>
 <body>
-
-	<%@ include file="./commons/_top.jspf" %>   
+    <%@ include file="./commons/_top.jspf" %>   
 
 	<div class="container">
 		<div class="row">
@@ -18,37 +17,21 @@
 				<div class="page-header">
 					<h1>로그인</h1>
 				</div>
-				
-				<form class="form-horizontal" action="/users/login" method="post">
-					
-					<c:if test="${not empty errorMessage}">
-					<div class="control-group">
-						<c:out value="${errorMessage}"></c:out>
-					</div>
-					</c:if>
-
-					
-					<div class="control-group">
-						<label class="control-label" for="userId">사용자 아이디</label>
-						<div class="controls">
-
-							<input type="text" name="userId" value="" placeholder="id"/>
-							
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="password">비밀번호</label>
-						<div class="controls">
-							<input type="password" id="password" name="password" value="" placeholder="password"/>
-						</div>
-					</div>		
-					
-					<div class="control-group">
-						<div class="controls">
-							<button type="submit" class="btn btn-primary">로그인</button>
-						</div>
-					</div>
-				</form>
+				<div id="main">
+					<form name="login" method="get" action="/login">
+						<table>
+							<tr>
+								<td>사용자 아이디</td>
+								<td><input type="text" name="userId"></td>
+							</tr>
+							<tr>
+								<td>비밀번호</td>
+								<td><input type="password" name="password"></td>
+							</tr>
+						</table>
+						<input type="submit" value="로그인" />
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

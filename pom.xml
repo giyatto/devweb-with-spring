@@ -7,6 +7,7 @@
 	<packaging>war</packaging>
 
 	<properties>
+		<org.springframework.version>4.1.6.RELEASE</org.springframework.version>
 		<tomcat.version>8.0.15</tomcat.version>
 	</properties>
 
@@ -24,17 +25,17 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.1.6.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>4.1.6.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.1.6.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
