@@ -30,6 +30,6 @@ public class UserController {
 		logger.debug("User : {}", user);
 		userDao.create(user);
 		logger.debug("Database : {}", userDao.findById(user.getUserId()));
-		return "form";
+		return "redirect:/";
 	}
 }
