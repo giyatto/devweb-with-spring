@@ -8,6 +8,8 @@
 	<context:component-scan base-package="net.giyatto" />
 
 	<mvc:annotation-driven />
+	<mvc:resources mapping="/stylesheets/**" location="/stylesheets/" />
+	<mvc:resources mapping="/commons/**" location="/commons/" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -16,6 +18,8 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 	
-	<mvc:resources mapping="/stylesheets/**" location="/stylesheets/" />
-	<mvc:resources mapping="/commons/**" location="/commons/" />
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages"
+		p:defaultEncoding="UTF-8"
+	/>
 </beans>
