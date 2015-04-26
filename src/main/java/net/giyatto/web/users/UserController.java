@@ -34,7 +34,6 @@ public class UserController {
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public String create(@Valid User user, BindingResult bindingResult){	//@Valid 붙여주고, 결과를 bindingResult에 담아준다.
 		logger.debug("User : {}", user);
-		
 		if(bindingResult.hasErrors()){
 			logger.debug("Binding Result has error!");
 			List<ObjectError> errors = bindingResult.getAllErrors();
@@ -43,7 +42,6 @@ public class UserController {
 			}
 			return "form";
 		}
-		
 		userDao.create(user);
 		logger.debug("Database : {}", userDao.findById(user.getUserId()));
 		return "redirect:/";
