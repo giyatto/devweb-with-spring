@@ -7,6 +7,7 @@
 	<packaging>war</packaging>
 
 	<properties>
+		<h2.database.version>1.4.187</h2.database.version>
 		<org.springframework.version>4.1.6.RELEASE</org.springframework.version>
 		<tomcat.version>8.0.15</tomcat.version>
 	</properties>
@@ -37,7 +38,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.4.187</version>
+			<version>${h2.database.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -170,6 +171,22 @@
 					<webXml>webapp/WEB-INF/web.xml</webXml>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <url>jdbc:h2:~/giyatto</url>
+                    <user>giyatto</user>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>${h2.database.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 		</plugins>
 	</build>
 </project>
